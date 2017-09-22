@@ -4,13 +4,13 @@ django - MySQL connectivity
 -change settings.py in django main project
 -run python manage.py migrate files to check
 
-views: python functions that take a request and respond in some kind of way
+views: simple python functions that take a request and respond in some kind of way
 model: a blue print for your model database. Its a template of how you are
         going to store data.
 
 Flow:
 
-    mainwebsite urls -> application urls -> appln views -> html
+    main_website urls -> application(music) urls -> appln(music) views -> html
 
 
 -makemigrations appname: whenever made changes to app models
@@ -25,3 +25,5 @@ Flow:
 -a.column: to display details
 -many methods for querying(class1.objects.filter(id = number))......learn further filter
 
+**********register new model class names in applications directory's admin file**********
+->by this you can access these database tables through django admin
