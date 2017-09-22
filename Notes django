@@ -1,0 +1,27 @@
+django - MySQL connectivity
+-create a database in MySQL
+-create a user. you can go with root user but its not a good idea
+-change settings.py in django main project
+-run python manage.py migrate files to check
+
+views: python functions that take a request and respond in some kind of way
+model: a blue print for your model database. Its a template of how you are
+        going to store data.
+
+Flow:
+
+    mainwebsite urls -> application urls -> appln views -> html
+
+
+-makemigrations appname: whenever made changes to app models
+-migrate: to commit migrations
+
+********querying(adding data, deleting, modifying) in database**********
+-go to python manage.py shell or console: from app_name import class1, class_u_choose
+-class1.objects.all() : to list all the data objects inside it # added __str__(self) function
+                        to display some text instead of "data object" for informational & aesthetic purpose.
+-a = class1(colummn1 = "", column2 = ""....)
+-a.save(): to save data in object
+-a.column: to display details
+-many methods for querying(class1.objects.filter(id = number))......learn further filter
+
