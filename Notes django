@@ -25,5 +25,27 @@ Flow:
 -a.column: to display details
 -many methods for querying(class1.objects.filter(id = number))......learn further filter
 
+///////////////////////////////////////////////////////////////////////////////////////////
+**==**==**==the above process is implemented in views to connect to database. Some additional
+************python functionality and html tags. Together the magic happens. look music/view.py def index().
+def index(request):
+    all_albums = Album.objects.all()
+    html = ''
+    for album in all_albums:
+        url = '/music/' + str(album.id)+'/'
+        html += '<a href="' + url + '">' + album.album_title + '</a><br>'
+    return HttpResponse(html)
+///////////////////////////////////////////////////////////////////////////////////////////
+
+
 **********register new model class names in applications directory's admin file**********
 ->by this you can access these database tables through django admin
+
+
+
+->context: common variable used that defines what passes to html
+->{% python code %}: goes between these
+->{{ variable }}: goes between these.
+
+
+
