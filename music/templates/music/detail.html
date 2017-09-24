@@ -6,12 +6,6 @@
     <h1>{{ album.album_title }}</h1>
     <h3>{{ album.artist }}</h3>
 
-    {% if error_message %}
-        <strong>{{ error_message }}</strong>
-    {% endif %}
-
-    <form action = "{% url 'music:favourite' album.id %}" method = "post" >
-        {% csrf_token %}
         {% for song in album.song_set.all %}
             <input type="radio" id="song{{ forloop.counter }}" name="song" value="{{ song.id }}" >
             <label for="song{{ forloop.counter }}">
@@ -21,8 +15,5 @@
                 {% endif %}
             </label><br>
         {% endfor %}
-        <input type="submit" value="Favourite" >
 
-
-    </form>
 {% endblock %}
