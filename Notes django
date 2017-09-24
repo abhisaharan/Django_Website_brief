@@ -25,6 +25,27 @@ Flow:
 -a.column: to display details
 -many methods for querying(class1.objects.filter(id = number))......learn further filter
 
+also to do individually
+-a = Classname()
+-a.columnname = 'values'
+-a.save
+
+edit database
+-a = Class.objects.get(pk = 1)
+-a.artist = "someone"
+-a.save
+
+
+-foreign key setup
+a = Album.objects.get(pk =1)
+go to new class
+song = Song() # Song class object
+song.album = a # thats it! first column in Song class mentioned as foreign key
+
+after setting foreign key we can add quickly using "set"
+-a.song_set_all() # to see all songs ***here "song" is class but the first letter is small
+-a.song_set.create(song_title = "whatever", file_type = "whatever") # it was quicker than doing individually
+
 ///////////////////////////////////////////////////////////////////////////////////////////
 **==**==**==the above process is implemented in views to connect to database. Some additional
 ************python functionality and html tags. Together the magic happens. look music/view.py def index().
@@ -52,3 +73,12 @@ def index(request):
 https://www.youtube.com/watch?v=uvafEFi2bY4&index=18&list=PL6gx4Cwl9DGBlmzzFcLgDhKTTfNLfX1IK
 
 
+****forms---------------------------
+-make sure to include "if error_message" to check forms
+-><forms action = "{% url 'music:favourite' album.id %}" method = "post" >
+    {% csrf_token %}
+    {% for song in album.song_set.all%}
+
+</forms>
+-action: which url you want to send this data  to.
+-post: post is send data. look online
