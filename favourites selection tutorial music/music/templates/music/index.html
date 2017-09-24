@@ -1,0 +1,20 @@
+{% extends 'music/base.html' %}
+
+
+{% block body %}
+
+    {% if all_albums %}
+        <h4>Welcome to my Music</h4>
+        <ul>
+            {% for album in all_albums %}
+                <li><a href = '{% url 'music:detail' album.id%}'>{{ album.album_title }}</a></li>  <!--Here we havent hard coded href = music/ album.id. We used music:detail checkout music/urls.py for further -->
+            {% endfor %}
+        </ul>
+    {% else %}
+        <h3>you dont have any album</h3>
+    {% endif %}
+
+{% endblock %}
+
+
+

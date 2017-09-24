@@ -1,0 +1,4 @@
+This is not main part of application. Favourites music selection with views, models and everything.
+Just for learning. After this moved to generic views.
+Generic views are some like in youtube we search for video. In search a list of
+videos is displayed, after clicking any of those videos and new page is opened with detailed instruction of that video
